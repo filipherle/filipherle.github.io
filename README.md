@@ -1,2 +1,2 @@
-# mr-chan.github.io
-website for chan
+# toxic-ig.github.io
+My personal Website
