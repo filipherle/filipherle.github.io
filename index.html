@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package/favicon-16x16.png">
+    <link rel="manifest" href="favicon_package/site.webmanifest">
+    <link rel="mask-icon" href="favicon_package/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filip's website</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #272822;
+            color: #f8f8f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #f8f8f2;
+            padding: 5px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #373832;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2, p, ul, li, a {
+            color: #f8f8f2;
+        }
+
+        a {
+            color: #66d9ef;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .terminal {
+            background-color: #1c1c1c;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .href_terminal {
+            color: #f8f8f2;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 5px;
+            height: 19px;
+            background-color: #a6e22e;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .command {
+            color: #a6e22e;
+        }
+
+        .output {
+            color: #f8f8f2;
+        }
+
+        nav {
+            margin-top: 5px;
+        }
+
+        nav a {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Filip Herle</h1>
+        <p><small>cybersec enthusiast, gamer, hobbyist, avid buffer overflower</small></p>
+        <nav><small>
+            <a href="https://github.com/filipherle" >github</a> |
+            <a href="https://www.linkedin.com/in/filipherle" target="_blank">linkedin</a> |
+            <a href="mailto:filip.herle@gmail.com" target="_blank">email</a> </small>
+        </nav>
+    </header>
+
+    <!--//     <section>
+        <h2>About Me</h2>
+        <p>Welcome to my cybersecurity world! I am passionate about securing digital landscapes and ensuring online safety for individuals and organizations. With a background in [Your Expertise], I strive to stay ahead of the latest threats and technologies.</p>
+
+        <h2>Services</h2>
+        <ul>
+            <li>Penetration Testing</li>
+            <li>Security Audits</li>
+        </ul>
+
+        <h2>Connect with Me</h2>
+        <p>Let's stay in touch! Feel free to reach out:</p>
+        <ul>
+            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank">LinkedIn Profile</a></li>
+            <li>Twitter: <a href="https://twitter.com/yourtwitter" target="_blank">@YourTwitter</a></li>
+        </ul>
+    </section>      //-->
+
+    <section class="terminal">
+        <p class="command">~$ whoami</p>
+        <p class="output">Filip Herle, 2nd year BUCS Student</p>
+        <p class="command">~$ ls -l education</p>
+        <p class="output">University of British Columbia - Combined Major in Business and Computer Science (BUCS)</p>
+        <!--<p class="command">~$ ls -l skills</p>
+        <ul class="output">
+            <li>Penetration Testing</li>
+            <li>Network Security</li>
+            <li>Incident Response</li>
+            <li>Security Training</li>
+        </ul>-->
+        
+        <p class="command">~$ ls -l certifications</p>
+        <p class="output">palo_alto&nbsp;&nbsp;&nbsp;Feb 2022&nbsp;&nbsp;&nbsp;security_operations_fundamentals.cert</p>
+        <p class="output">palo_alto&nbsp;&nbsp;&nbsp;Mar 2021&nbsp;&nbsp;&nbsp;cybersecurity_foundations.cert</p>
+        <p class="output">palo_alto&nbsp;&nbsp;&nbsp;Dec 2021&nbsp;&nbsp;&nbsp;cloud_security_fundamentals.cert</p>
+        <p class="output">gym_bc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dec 2019&nbsp;&nbsp;&nbsp;level_1_artistic_gymnastics_coach.cert</p>
+        <p class="command">~$ ls -l projects</p>
+        <p class="output">filip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??? ????&nbsp;&nbsp;&nbsp;<a href="https://www.github.com/filipherle/ewat" class="href_terminal">ewat.py</a></p>
+        <p class="output">filip_ubc&nbsp;&nbsp;Jan 2024&nbsp;&nbsp;&nbsp;<a href="https://github.com/filipherle/CyberSecurityPanel-Project" class="href_terminal">security_management_system.java</a></p>
+        <p class="output">bolt_ubc&nbsp;&nbsp;&nbsp;Sep 2023&nbsp;&nbsp;&nbsp;first_byte_data_case_competition.pptx</p>
+        <p class="output">filip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jun 2017&nbsp;&nbsp;&nbsp;<a href="https://github.com/filipherle/pySE" class="href_terminal">pySE.py</a></p>
+        <p class="output">filip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 2017&nbsp;&nbsp;&nbsp;<a href="https://github.com/filipherle/PycklePi" class="href_terminal">PycklePi.py</a></p>
+        <p class="output">filip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feb 2017&nbsp;&nbsp;&nbsp;<a href="https://github.com/filipherle/Quack" class="href_terminal">Quack.py</a></p>
+        
+        <p class="command">~$ ls -l awards</p>
+        <p class="output">ministry_of_education&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dec 2022&nbsp;&nbsp;&nbsp;bc_achievement_for_academic_excellence.scholarship</p>
+        <p class="output">canada_governor_general&nbsp;&nbsp;&nbsp;&nbsp;Jul 2022&nbsp;&nbsp;&nbsp;governor_general_bronze_medal.award</p>
+        <p class="output">iam_aerospace_assocation&nbsp;&nbsp;&nbsp;Apr 2022&nbsp;&nbsp;&nbsp;iam_scholarship_award.scholarship</p>
+        <p class="output">gymnastics_bc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apr 2019&nbsp;&nbsp;&nbsp;lvl4_gymnastics_bc_champion.award</p>
+        <p class="command">~$ cat technical_skills/languages.txt</p>
+        <p class="output">Java, Python, JavaScript, HTML/CSS, C, Assembly, Racket</p>
+        <p class="command">~$ cat technical_skills/frameworks.txt</p>
+        <p class="output">Flast, Swing, JUnit</p>
+        <p class="command">~$ cat technical_skills/dev_tools.txt</p>
+        <p class="output">Git, Visual Studio, VS Code, IntelliJ, Atom, Sublime Text, GNU Nano</p>
+        <p class="command">~$ <span class="cursor"></span></p>
+    </section>
+
+</body>
+
+</html>
