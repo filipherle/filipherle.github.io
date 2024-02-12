@@ -1,2 +1,3 @@
-# mr-chan.github.io
-My personal Website
+# My personal website
+
+Welcome, and enjoy your stay.
