@@ -1,1 +1,81 @@
 
+body {
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #272822;
+    color: #f8f8f2;
+}
+
+header {
+    background-color: #333;
+    color: #f8f8f2;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+section {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #373832;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2, p, ul, li, a {
+    color: #f8f8f2;
+}
+
+a {
+    color: #66d9ef;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.terminal {
+    background-color: #1c1c1c;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.href_terminal {
+    color: #f8f8f2;
+}
+
+.cursor {
+    display: inline-block;
+    width: 5px;
+    height: 19px;
+    background-color: #a6e22e;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.command {
+    color: #a6e22e;
+}
+
+.output {
+    color: #f8f8f2;
+}
+
+nav {
+    margin-top: 5px;
+}
+
+nav a {
+    margin-right: 10px;
+}
