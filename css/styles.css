@@ -24,7 +24,7 @@ article {
 header {
     background-color: #333;
     color: #f8f8f2;
-    padding: 4px;
+    padding: 3px;
     text-align: center;
     font-size: 1.4rem;
 }
@@ -88,7 +88,7 @@ a:hover {
 }
 
 nav {
-    margin-top: 5px;
+    margin-top: 2px;
 }
 
 nav a {
