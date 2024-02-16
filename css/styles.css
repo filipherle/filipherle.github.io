@@ -79,3 +79,7 @@ nav {
 nav a {
     margin-right: 10px;
 }
+
+.blog_post {
+    font-family: Arial;
+}
