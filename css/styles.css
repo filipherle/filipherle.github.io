@@ -7,6 +7,15 @@ body {
     color: #f8f8f2;
 }
 
+.code-snippet {
+    background-color: #121213f3; 
+    color: #ffffff; 
+    font-family: 'Courier New', monospace; 
+    padding: 2px;
+    border-radius: 5px;
+    overflow-x: auto; /* Enable horizontal scrolling for long lines */
+}
+
 article {
     font-family: 'Open Sans';
     font-size: 1.1rem;
