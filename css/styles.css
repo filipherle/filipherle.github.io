@@ -1,10 +1,15 @@
 
 body {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Open Sans';
     margin: 0;
     padding: 0;
     background-color: #717171;
     color: #f8f8f2;
+}
+
+article {
+    font-family: 'Open Sans';
+    font-size: 1.1rem;
 }
 
 header {
