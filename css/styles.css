@@ -3,7 +3,7 @@ body {
     font-family: 'Courier New', monospace;
     margin: 0;
     padding: 0;
-    background-color: #272822;
+    background-color: #717171;
     color: #f8f8f2;
 }
 
@@ -19,7 +19,7 @@ section {
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #373832;
+    background-color: #282828dd;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
