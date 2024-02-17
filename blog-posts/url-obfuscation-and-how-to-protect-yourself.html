@@ -35,114 +35,101 @@
         <header style="font-size: 2rem">URL Obfuscation</header>
         <p>February 16th, 2024</p>
         <article >
-            <h1>Wait… That Wasn’t Facebook?</h1>
+            <h2>Wait… That Wasn’t Facebook?</h2>
+            <p>In today's digital age, malicious hackers are constantly finding new ways to deceive unsuspecting internet users. Many methods that used to be effective no longer work, as people are generally more aware of internet safety and security. <i>Knock on wood</i></p>
+            <p>However, an attack vector that I find particularly interesting because it can be difficult to spot is URL obfuscation; making a potentially harmful link appear safe and legitimate.</p>
+            <p>By exploiting human curiosity and with a little bit of HTML/CSS/JS, hackers can trick people into clicking on these links, leading to devastating consequences such as identity theft, malware infections, or financial loss. This is especially disastrous in businesses, where an employee clicking a link can put the whole business at risk.</p>
+            
+            <h2>How do they do it?</h2>
+            <p>Hiding URLs can be done in numerous ways with HTML and other obfuscation methods.</p>
+            <p>For instance, hackers may use JavaScript event handlers like <code>onclick</code> to redirect the user to a different URL than what is displayed. They can also manipulate the <code>href</code> attribute of <code>&lt;a&gt;</code> tags dynamically, making the link point to a different address upon clicking.</p>
+            <p>To make matters worse, hackers can further obfuscate malicious URLs by using URL shorteners or redirect services. These services mask the actual URL behind a shortened or customized link, making it challenging for users to discern the true destination.</p>
+            
+            <h2>Let’s take a look at some examples:</h2>
+            <h3><strong>Easy to spot:</strong></h3>
+            <center style="font-size: 1.3rem"><a href="https://example.com">www.google.com</a></center>
+            <section class="code-snippet">
+                <p class="output">&lt;a href="https://example.com"&gt;www.google.com&lt;/a&gt;</p>
+            </section>
+            <p>This one is easy to spot and easy to protect against. When you hover your mouse over the link, your browser will automatically show the link it is actually pointing to in its status bar (usually on the bottom left of your screen) instead of the one that is displayed. Try it yourself and hover over the link above!</p>
+            
+            
+            <br>
+            <h3><strong>Easy to spot:</strong></h3>
+            <center style="font-size: 1.2rem"><a href="https://facebook.com+login=secure+settings=private@example.com">https://facebook.com+login=secure+settings=private@example.com</a></center>
+            <section class="code-snippet">
+                <p class="output">https://facebook.com+login=secure+settings=private@example.com</p>
+            </section>
+            <p>This one is a little more tricky to detect, but once you know what to look for it is easy to spot and easy to protect against. When you hover your mouse over the link, your browser will once again show the link it is actually pointing to in its status bar. However in this case, the first part of the link is completely legitimate, it is only after the @ symbol in the URL that the fake website is added and thus will redirect to it. </p>
+            <p>This can be a problem because unsuspecting users can quickly scan the URL and see that the first part of the link looks safe and proceed to click on it without checking the browser's status bar. This is made even worse when a browser cuts off the second part of the link so you can’t see what you will redirect to.</p>
+            
+            <br>
+            <h3><strong>More difficult to spot:</strong></h3>
+            <center style="font-size: 1.3rem"><span onclick="location.href='https://example.com';">Try me!</span></center>
+            <section class="code-snippet">
+                <p class="output">&lt;span onclick="location.href='https://evil-website.com';"&gt;safe-website.com&lt;/span&gt;</p>
+            </section>
+            <p>This one is tricky. When you hover your mouse over the link, your browser will show nothing in the status bar. This is because it is not initiated as a URL, so the browser does not detect it as one. To the browser, it is simply a piece of text that when clicked will direct you to the specified website. <i>(The "Try me!" above does not look like a link, but try clicking it!)</i></p>
 
-    <p>In today's digital age, malicious hackers are constantly finding new ways to deceive unsuspecting internet users. Many methods that used to be effective no longer work, as people are generally more aware of internet safety and security. <i>Knock on wood</i></p>
+            <br>
+            <br>
+            
+            <center style="font-size: 1.3rem"><span onclick="location.href='https://example.com';" style="color: #0672bf; text-decoration: underline; cursor: pointer;" onmouseover="this.style.color='#004466'" onmouseout="this.style.color='#0077cc'">Try me!</span></center>
 
-    <p>However, an attack vector that I find particularly interesting because it can be difficult to spot is URL obfuscation; making a potentially harmful link appear safe and legitimate.</p>
-
-    <p>By exploiting human curiosity and with a little bit of HTML/CSS/JS, hackers can trick people into clicking on these links, leading to devastating consequences such as identity theft, malware infections, or financial loss. This is especially disastrous in businesses, where an employee clicking a link can put the whole business at risk.</p>
-
-    <h2>How do they do it?</h2>
-
-    <p>Hiding URLs can be done in numerous ways with HTML and other obfuscation methods.</p>
-
-    <p>For instance, hackers may use JavaScript event handlers like <code>onclick</code> to redirect the user to a different URL than what is displayed. They can also manipulate the <code>href</code> attribute of <code>&lt;a&gt;</code> tags dynamically, making the link point to a different address upon clicking.</p>
-
-    <p>To make matters worse, hackers can further obfuscate malicious URLs by using URL shorteners or redirect services. These services mask the actual URL behind a shortened or customized link, making it challenging for users to discern the true destination.</p>
-
-    <h2>Let’s take a look at some examples:</h2>
-
-    <h3><strong>Easy to spot:</strong></h3>
-
-    <center style="font-size: 1.3rem"><a href="https://example.com">www.google.com</a></center>
-
-    <section class="code-snippet">
-        <p class="output">&lt;a href="https://example.com"&gt;www.google.com&lt;/a&gt;</p>
-    </section>
+            <section class="code-snippet">
+                <p class="output">&lt;span onclick="location.href='https://evil-website.com';" style="color: #0672bf; text-decoration: underline; cursor: pointer;" onmouseover="this.style.color='#004466'" onmouseout="this.style.color='#0077cc'"&gt;safe-website.com&lt;/span&gt;</p>
+            </section>
         
+            <p>Malicious actors can take this a step further and make the text look like a clickable link, but like before, the browser does not see it as one, so it does not show anything in the status bar. </p>
+            
+            <br>
+            <br>
 
-    <p>This one is easy to spot and easy to protect against. When you hover your mouse over the link, your browser will automatically show the link it is actually pointing to in its status bar (usually on the bottom left of your screen) instead of the one that is displayed. Try it yourself and hover over the link above!</p>
+            <center style="font-size: 1.3rem"><button onclick="location.href='https://example.com';">Try me!</button></center>
+            <section class="code-snippet">
+                <p class="output">&lt;button onclick="location.href='https://example.com';"&gt;safe-website.com&lt;/button&gt;</p>
+            </section>
 
+            <p>Since clicking a link that you don’t trust is never a good idea and regarded as bad practice, hackers can also do the same with buttons. Once again, the example above does not show anything in the browser’s status bar. <i>Buttons are safe… right?</i></p>
+            
+            <br>
+            
+            <h3><strong>Difficult to spot:</strong></h3>
 
-    <br>
-    <h3><strong>Easy to spot:</strong></h3>
+            <center style="font-size: 1.3rem"><a href="http://www.safe-link.com/" onclick="this.href='http://example.com/'">Try me!</a></center>
+            <section class="code-snippet">
+                <p class="output">&lt;a href="http://www.safe-link.com/" onclick="this.href='http://evil-website.com/'"&gt;safe-website.com&lt;/a&gt;</p>
+            </section>
 
-    <center style="font-size: 1.2rem"><a href="https://facebook.com+login=secure+settings=private@example.com">https://facebook.com+login=secure+settings=private@example.com</a></center>
-    <section class="code-snippet">
-        <p class="output">https://facebook.com+login=secure+settings=private@example.com</p>
-    </section>
-        
+            <p>This one is the most difficult one to spot because unlike the first example, hovering over this link will prompt a browser’s status bar to show “www.safe-link.com” but redirect a user to the malicious link when clicked. </p>
+            <p>This specific attack can be used in phishing attacks, and is difficult to defend against without proper protection. This is why it is incredibly important to maintain strong security protocols and routinely train employees to keep your business safe.</p>
 
-    <p>This one is a little more tricky, but once you know what to look for it is easy to spot and easy to protect against. When you hover your mouse over the link, your browser will once again show the link it is actually pointing to in its status bar. However in this case, the first part of the link is completely legitimate, it is only after the @ symbol in the URL that the fake website is added and thus will redirect to it. </p>
+            <br>
+            <h2>How do I protect myself?</h2>
 
-    <p>This can be a problem because unsuspecting users can quickly scan the URL and see that the first part of the link looks safe and proceed to click on it without checking the browser's status bar. This is made even worse when a browser cuts off the second part of the link so you can’t see what you will redirect to.</p>
+            <p>So, how can you protect yourself from falling victim to these URL obfuscation techniques? Here are a few essential tips:</p>
 
+            <ol>
+                <li><strong>Hover over links:</strong> Before clicking on any link, hover your mouse cursor over it to view the actual URL in the browser's status bar. Verify that the displayed link matches the destination you expect. If it looks suspicious or unfamiliar, proceed with caution. (However, we now know that this does not always work!)</li>
+                <li><strong>Inspect the HTML source:</strong> If you have technical knowledge, inspect the HTML source code of a webpage/email to identify any hidden or manipulated links, especially if it seems off. Look for JavaScript event handlers or modifications to the <code>href</code> attribute that may indicate URL hiding.</li>
+                <li><strong>Be cautious of unsolicited emails and messages:</strong> Malicious links are often distributed through phishing emails, social media messages, or text messages. Avoid clicking on links from unknown or untrusted sources. Instead, manually type the URL into your browser or use a trusted search engine to find the desired website.</li>
+                <li><strong>Keep your software up to date:</strong> Regularly update your operating system, web browser, and security software to ensure you have the latest protections against known vulnerabilities and exploits.</li>
+                <li><strong>Use a reliable antivirus:</strong> Install and maintain trusted anti-malware software on your devices. These tools can help detect and block malicious links or warn you about suspicious websites.</li>
+            </ol>
 
-    <br>
-    <h3><strong>More difficult to spot:</strong></h3>
+            <p>Remember, staying vigilant and cautious while browsing the internet is crucial in protecting yourself from falling victim to URL hiding and other malicious techniques employed by hackers. By practicing safe browsing habits and being skeptical of unfamiliar links, you can reduce the risk of becoming a victim of cybercrime.</p>
 
-    <center style="font-size: 1.3rem"><span onclick="location.href='https://example.com';">Try me!</span></center>
+            <p>Stay safe online!</p>
 
-    <section class="code-snippet">
-        <p class="output">&lt;span onclick="location.href='https://evil-website.com';"&gt;safe-website.com&lt;/span&gt;</p>
-    </section>
+            <p>Filip</p>
 
-    <p>This one is tricky. When you hover your mouse over the link, your browser will show nothing in the status bar. This is because it is not initiated as a URL, so the browser does not detect it as one. To the browser, it is simply a piece of text that when clicked will direct you to the specified website. </p>
-
-    <br>
-    <center style="font-size: 1.3rem"><span onclick="location.href='https://example.com';" style="color: #0672bf; text-decoration: underline; cursor: pointer;" onmouseover="this.style.color='#004466'" onmouseout="this.style.color='#0077cc'">Try me!</span></center>
-
-    <section class="code-snippet">
-        <p class="output">&lt;span onclick="location.href='https://evil-website.com';" style="color: #0672bf; text-decoration: underline; cursor: pointer;" onmouseover="this.style.color='#004466'" onmouseout="this.style.color='#0077cc'"&gt;safe-website.com&lt;/span&gt;</p>
-    </section>
-        
-    <p>Malicious actors can take this a step further and make the text look like a clickable link, but like before, the browser does not see it as one, so it does not show anything in the status bar. </p>
-    <br>
-
-    <center style="font-size: 1.3rem"><button onclick="location.href='https://example.com';">Try me!</button></center>
-    <section class="code-snippet">
-        <p class="output">&lt;button onclick="location.href='https://example.com';"&gt;Safe Link&lt;/button&gt;</p>
-    </section>
-
-    
-    <p>Since clicking a link that you don’t trust is never a good idea and regarded as bad practice, hackers can also do the same with buttons. Once again, the example above does not show anything in the browser’s status bar. <i>Buttons are safe… right?</i></p>
-    <br>
-    <h3><strong>Difficult to spot:</strong></h3>
-
-    <center style="font-size: 1.3rem"><a href="http://www.safe-link.com/" onclick="this.href='http://example.com/'">Try me!</a></center>
-    <section class="code-snippet">
-        <p class="output">&lt;a href="http://www.safe-link.com/" onclick="this.href='http://evil-website.com/'"&gt;Safe Link&lt;/a&gt;</p>
-    </section>
-
-    <p>This one is the most difficult one to spot because unlike the first example, hovering over this link will prompt a browser’s status bar to show the “safe link” but redirect a user to the malicious link when clicked. </p>
-
-    <br>
-    <h2>How do I protect myself?</h2>
-
-    <p>So, how can you protect yourself from falling victim to these URL obfuscation techniques? Here are a few essential tips:</p>
-
-    <ol>
-        <li><strong>Hover over links:</strong> Before clicking on any link, hover your mouse cursor over it to view the actual URL in the browser's status bar. Verify that the displayed link matches the destination you expect. If it looks suspicious or unfamiliar, proceed with caution. (However, we now know that this does not always work!)</li>
-        <li><strong>Inspect the HTML source:</strong> If you have technical knowledge, inspect the HTML source code of a webpage/email to identify any hidden or manipulated links, especially if it seems off. Look for JavaScript event handlers or modifications to the <code>href</code> attribute that may indicate URL hiding.</li>
-        <li><strong>Be cautious of unsolicited emails and messages:</strong> Malicious links are often distributed through phishing emails, social media messages, or text messages. Avoid clicking on links from unknown or untrusted sources. Instead, manually type the URL into your browser or use a trusted search engine to find the desired website.</li>
-        <li><strong>Keep your software up to date:</strong> Regularly update your operating system, web browser, and security software to ensure you have the latest protections against known vulnerabilities and exploits.</li>
-        <li><strong>Use a reliable antivirus:</strong> Install and maintain trusted anti-malware software on your devices. These tools can help detect and block malicious links or warn you about suspicious websites.</li>
-    </ol>
-
-    <p>Remember, staying vigilant and cautious while browsing the internet is crucial in protecting yourself from falling victim to URL hiding and other malicious techniques employed by hackers. By practicing safe browsing habits and being skeptical of unfamiliar links, you can reduce the risk of becoming a victim of cybercrime.</p>
-
-    <p>Stay safe online!</p>
-
-    <p>Filip</p>
-
-    <br>
-    <p><strong>Credits:</strong></p>
-    <ul>
-        <li><a href="https://josemortellaro.com/how-to-really-hide-a-link/">Jose Mortellaro</a></li>
-        <li><a href="https://www.owenboswarva.com/URLspoof.htm">Owen Boswarva</a></li>
-        <li><a href="https://anishmofficial25861.medium.com/url-obfuscation-heres-how-the-bad-guys-trick-the-innocent-people-6d5a5f56f8a4">Anish M (Medium)</a></li>
-    </ul>
+            <br>
+            <p><strong>Credits:</strong></p>
+            <ul>
+                <li><a href="https://josemortellaro.com/how-to-really-hide-a-link/">Jose Mortellaro</a></li>
+                <li><a href="https://www.owenboswarva.com/URLspoof.htm">Owen Boswarva</a></li>
+                <li><a href="https://anishmofficial25861.medium.com/url-obfuscation-heres-how-the-bad-guys-trick-the-innocent-people-6d5a5f56f8a4">Anish M (Medium)</a></li>
+            </ul>
         </article>
     </section>
 
